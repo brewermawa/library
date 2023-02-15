@@ -16,14 +16,12 @@ function Book(title, author, pages, read) {
 }
 
 //Temporary book instances, this will be removed
-/* const book1 = new Book("Fair Warning", "Michael Connelly", 396, true);
+const book1 = new Book("Fair Warning", "Michael Connelly", 396, true);
 const book2 = new Book("Winter of the World", "Ken Follett", 1027, false)
 const book3 = new Book("The Boy from the Woods", "Harlan Coben", 405, false);
 myLibrary.push(book1);
 myLibrary.push(book2);
-myLibrary.push(book3); */
-
-
+myLibrary.push(book3);
 
 function addLibaryToGrid() {
     books.innerHTML = "";
@@ -45,6 +43,12 @@ function addLibaryToGrid() {
                 info.className = "info";
                 data = document.createElement("span");
                 data.className = "material-icons";
+
+                bookInfo.style.cursor = "pointer";
+
+                bookInfo.addEventListener("click", function() {
+                    toggleRead(b);
+                });
                 
                 if (myLibrary[b][key]) {
                     data.textContent = "done";
@@ -95,6 +99,13 @@ function addBookToLibrary(book) {
     addBookForm.style.display = "none";
     addBookButton.style.display = "block";
     saveBookButton.style.display = "none";
+}
+
+function toggleRead(b) {
+    let book = myLibrary[b];
+    book.read = !book.read;
+
+    addLibaryToGrid();
 }
 
 addLibaryToGrid();
