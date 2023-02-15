@@ -1,5 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    font-size: .9rem;
+    background-color: #e2e8f0;
+}
+
+/* BEGIN HEADER */
+
+header {
+    background-color: white;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+#book-stats {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: right;
+}
+
+/* END HEADER */
+
+/* BEGIN MAIN */
+
+main {
+    background-color: #e2e8f0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 15px;
+    border-top: 15px solid burlywood;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+    font-size: .8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.book-info {
+    display: flex;
+}
+
+.book-read {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: .7rem;
+}
+
+.book-read > .material-icons {
+    font-size: .8rem;
+}
+
+.info {
+    font-weight: 600;
+}
+
+.data {
+    margin-left: auto;
+}
+
+button {
+    border: none;
+    width: 100px;
+    height: 2rem;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #1992d4;
+    color: white;
+    font-weight: 600;
+    font-size: .8rem;
+    align-self: center;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.add-book {
+    display: none;
+    align-self: center;
+}
+
+.add-book-form {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.add-book-form > input {
+    height: 2rem;
+}
+
+#save-book {
+    display: none;
+}
+
+/* END MAIN */
