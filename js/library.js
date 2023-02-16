@@ -70,6 +70,15 @@ function addLibaryToGrid() {
             bookInfo.appendChild(data);
             card.appendChild(bookInfo);
         }
+
+        let deleteButton = document.createElement("button");
+        deleteButton.innerHTML = "Delete";
+        deleteButton.className = "delete-button";
+        deleteButton.addEventListener("click", function() {
+            deteleBook(b);
+        });
+        card.appendChild(deleteButton);
+
         books.appendChild(card);
     }
 }
@@ -101,10 +110,18 @@ function addBookToLibrary(book) {
     saveBookButton.style.display = "none";
 }
 
-function toggleRead(b) {
-    let book = myLibrary[b];
+function toggleRead(bookIndex) {
+    let book = myLibrary[bookIndex];
     book.read = !book.read;
 
+    addLibaryToGrid();
+}
+
+function deteleBook(bookIndex) {
+    console.log(bookIndex);
+    console.log(myLibrary);
+    myLibrary.splice(bookIndex, 1);
+    console.log(myLibrary);
     addLibaryToGrid();
 }
 

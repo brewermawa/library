@@ -124,4 +124,12 @@ button:hover {
     display: none;
 }
 
+.delete-button {
+    background-color: red;
+    width: 50px;
+    height: 1.5rem;
+    padding: 3px;
+    font-size: .7rem;
+}
+
 /* END MAIN */
